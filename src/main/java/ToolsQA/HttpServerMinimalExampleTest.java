@@ -28,9 +28,9 @@ public class HttpServerMinimalExampleTest extends AllDirectives {
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow,
-                ConnectHttp.toHost("localhost", 8080), materializer);
+                ConnectHttp.toHost("0.0.0.0", 4200), materializer);
 
-        System.out.println("Server online at http://localhost:8080/");
+        System.out.println("Server online at http://0.0.0.0:8080/");
 //        System.in.read(); // let it run until user presses return
 //
 //        binding
