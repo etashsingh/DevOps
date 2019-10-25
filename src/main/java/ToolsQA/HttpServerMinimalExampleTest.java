@@ -31,11 +31,6 @@ public class HttpServerMinimalExampleTest extends AllDirectives {
                 ConnectHttp.toHost("0.0.0.0", 4200), materializer);
 
         System.out.println("Server online at http://0.0.0.0:8080/");
-//        System.in.read(); // let it run until user presses return
-//
-//        binding
-//                .thenCompose(ServerBinding::unbind) // trigger unbinding from the port
-//                .thenAccept(unbound -> system.terminate()); // and shutdown when done
     }
 
     //okokokokokok
