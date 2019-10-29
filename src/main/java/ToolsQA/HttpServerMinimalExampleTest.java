@@ -32,6 +32,7 @@ public class HttpServerMinimalExampleTest extends AllDirectives {
 
         System.out.println("Server online at http://0.0.0.0:8080/");
     }
+    //drftgyhujik
 
     private Route createRoute() {
         return concat(
