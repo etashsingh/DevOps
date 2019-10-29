@@ -37,6 +37,10 @@ public class HttpServerMinimalExampleTest extends AllDirectives {
         return concat(
                 path("hello", () ->
                         get(() ->
-                                complete("<h1>Say hello to akka-http</h1>"))));
+                                complete("<h1>Say hello to akka-http</h1>"))),
+                path("okay", () ->
+                        get(() ->
+                                complete("Result")))
+        );
     }
 }
