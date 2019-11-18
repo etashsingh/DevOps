@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'koosiedemoer/netty-tcnative-alpine' }
-    }
+    agent any
     stages {
         stage ('git') {
             steps {
