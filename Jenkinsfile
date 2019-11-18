@@ -24,7 +24,7 @@ pipeline {
         }
         stage ('docker run') {
             steps {
-                sh '''if [ ! "$(docker ps -q -f name=etash-image3)" ]; then
+                sh '''if [ "$(docker ps -q -f name=etash-image3)" ]; then
                                                if [ $(docker inspect -f '{{.State.Running}}' etash-image3) = "true" ]; then
                                                    docker rm -f etash-image3
                                                fi
