@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image: koosiedemoer/netty-tcnative-alpine }
+        docker { image 'koosiedemoer/netty-tcnative-alpine' }
     }
     stages {
         stage ('git') {
