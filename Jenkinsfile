@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image: koosiedemoer/netty-tcnative-alpine }
-    }
+    agent { node { label 'node1' } }
     stages {
         stage ('git') {
             steps {
@@ -16,7 +14,7 @@ pipeline {
         stage ('docker image build'){
             steps {
                 sh 'docker build -t devops-image3'
-                sh 'docker tag devops-image3 etashsingh29/devops-image3'
+                sh 'docker tag devops-image3 etashsingh29/devops-image3:latest'
             }
         }
         stage ('docker push') {
