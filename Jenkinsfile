@@ -9,6 +9,9 @@ pipeline {
         stage ('git') {
             steps {
                 sh 'mvn clean install'
+                sh 'pwd'
+                sh 'whoami'
+                sh 'which docker'
             }
         }
         stage ('making artifact') {
