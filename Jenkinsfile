@@ -18,22 +18,22 @@ pipeline {
         }
         stage ('docker image build'){
             steps {
-                sh 'docker build -t devops-image3 .'
-                sh 'docker tag devops-image3 etashsingh29/devops-image3'
+                sh 'docker build -t devops-image4 .'
+                sh 'docker tag devops-image4 etashsingh29/devops-image4'
             }
         }
         stage ('docker push') {
             steps {
-                sh 'docker push etashsingh29/devops-image3'
+                sh 'docker push etashsingh29/devops-image4'
             }
         }
         stage ('docker run') {
             steps {
-                sh '''if [ ! "$(docker ps -q -f name=etash-image3)" ]; then
-                                               if [ "$(docker ps -aq -f status=exited -f name=etash-image3)" ]; then
-                                                   docker rm etash-image3
+                sh '''if [ ! "$(docker ps -q -f name=etash-image4)" ]; then
+                                               if [ "$(docker ps -aq -f status=exited -f name=etash-image4)" ]; then
+                                                   docker rm etash-image4
                                                fi
-                                                   docker run -d -p 4200:4200 --name etash-image3 etashsingh29/devops-image3
+                                                   docker run -d -p 4200:4200 --name etash-image4 etashsingh29/devops-image4
                                                fi'''
             }
         }
