@@ -2,6 +2,7 @@ pipeline {
     agent { node { label 'node1' } }
     tools {
         maven 'maven'
+        docker 'docker'
     }
     stages {
         stage ('git') {
