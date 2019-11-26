@@ -34,9 +34,9 @@ pipeline {
         }
     }
     post {
-        success {
-                 junit 'target/surefire-reports/*.xml'
-        }
+//         success {
+//                  junit 'target/surefire-reports/*.xml'
+//         }
         success {
             emailext (
                  subject: "Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
