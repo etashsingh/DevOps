@@ -1,5 +1,8 @@
 pipeline {
     agent { node { label 'node1' } }
+    tools {
+        maven
+    }
     stages {
         stage ('git') {
             steps {
@@ -14,7 +17,7 @@ pipeline {
         stage ('docker image build'){
             steps {
                 sh 'docker build -t devops-image3'
-                sh 'docker tag devops-image3 etashsingh29/devops-image3:latest'
+                sh 'docker tag devops-image3 etashsingh29/devops-image3'
             }
         }
         stage ('docker push') {
