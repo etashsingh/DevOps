@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('docker image build'){
             steps {
-                sh 'docker build -t devops-image3'
+                sh 'docker build -t devops-image3 .'
                 sh 'docker tag devops-image3 etashsingh29/devops-image3'
             }
         }
