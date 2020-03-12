@@ -5,6 +5,9 @@ pipeline {
     tools {
         maven 'maven'
     }
+    triggers {
+        githubPush()
+    }
     stages {
         stage ('git') {
             steps {
