@@ -5,6 +5,9 @@ pipeline {
     tools {
         maven 'maven'
     }
+    triggers {
+        githubPush()
+    }
     stages {
         stage ('git') {
             steps {
@@ -44,6 +47,7 @@ pipeline {
     post {
 //         success {
 //                  junit 'target/surefire-reports/*.xml'
+        //bruvgshjvdvvdvd
 //         }
         success {
             emailext (
